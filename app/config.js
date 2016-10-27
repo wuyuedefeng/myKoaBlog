@@ -15,7 +15,7 @@ var config = {
     // mongodb 配置
     db: 'mongodb://localhost/nodeChina',
 
-    // redis 配置，默认是本地
+    // _redis 配置，默认是本地
     redis: {
         host: '127.0.0.1',
         port: 6379

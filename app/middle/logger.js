@@ -1,4 +1,4 @@
-var winston = require('./winston');
+var winston = require('./_winston');
 // x-response-time and logger
 function Logger(app){
     "use strict";
