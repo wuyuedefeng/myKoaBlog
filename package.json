@@ -18,7 +18,8 @@
   },
   "homepage": "https://github.com/wuyuedefeng/myKoaBlog#readme",
   "dependencies": {
-    "koa": "^1.2.4"
+    "koa": "^1.2.4",
+    "winston": "^2.2.0"
   },
   "devDependencies": {
     "gulp": "^3.9.1",
