@@ -1,0 +1,28 @@
+{
+  "name": "mykoablog",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "forever -w ./app/app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wuyuedefeng/myKoaBlog.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wuyuedefeng/myKoaBlog/issues"
+  },
+  "homepage": "https://github.com/wuyuedefeng/myKoaBlog#readme",
+  "dependencies": {
+    "koa": "^1.2.4"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "require-dir": "^0.3.1",
+    "typescript": "^2.0.6"
+  }
+}
