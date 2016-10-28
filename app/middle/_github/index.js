@@ -106,7 +106,7 @@ router.get('/authCallback', function *(next){
         })
     }).then(function (user) {
         self.cookies.set("uid", user.redis_id, {signed: true});
-        self.redirect('/login');
+        self.redirect('/');
     });
 });
 
