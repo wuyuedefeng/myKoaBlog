@@ -1,6 +1,7 @@
 var config = require('./config');
 var koa = require('koa');
 var bodyParser = require('koa-bodyparser');
+var staticServe = require('koa-static');
 
 // --- begin --
 var app = koa();
@@ -10,7 +11,7 @@ app.keys = config.session.keys;
 /**
  * 静态文件
  */
-require('./public')(app);
+app.use(staticServe(__dirname + '/public'));
 
 /**
  * logger x-response-time
