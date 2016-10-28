@@ -1,5 +1,5 @@
 var router = require('koa-router')({
-    prefix: '/api/users'
+    prefix: '/api/v1/user'
 });
 
 router.post('/login', function *(){
@@ -45,6 +45,17 @@ router.post('/logout', function *(){
     "use strict";
     this.cookies.set("uid", null, {signed: true});
     this.body = {success: true};
+});
+
+// 个人信息
+router.get('/info', function *(){
+    "use strict";
+    var user = this.currentUser;
+    if (user){
+        this.body = {success: true, user: user};
+    }else {
+        this.body = {success: false, msg: '未登陆'};
+    }
 });
 
 module.exports = router.routes();
