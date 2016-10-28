@@ -14,14 +14,11 @@ function Session(app){
                     resolve(user);
                 });
             }).then(function(user){
-                console.log('1');
                 self.currentUser = user;
             });
         }else {
-            console.log('2');
             self.currentUser = null;
         }
-        console.log('3');
         yield next;
     });
 }

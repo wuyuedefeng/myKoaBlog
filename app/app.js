@@ -2,6 +2,8 @@ var config = require('./config');
 var koa = require('koa');
 var bodyParser = require('koa-bodyparser');
 var staticServe = require('koa-static');
+// 加载models 链接mongo
+require('./models');
 
 // --- begin --
 var app = koa();
@@ -38,6 +40,7 @@ require('./middle/session')(app);
  * Api
  */
 require('./api')(app);
+require('./routes')(app);
 
 
 // app.use(function *(){

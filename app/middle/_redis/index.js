@@ -84,7 +84,7 @@ function update(user, cb){
 }
 
 function configOpt(opt){
-    opt = opt || {unameShadow: 'username'};
+    opt = opt || {unameShadow: 'login'};
     "use strict";
     // 默认映射username字段作为uname的值(即可以通过username查询到user通过:getUserByUid)
     config.unameShadow = opt.unameShadow || 'username'
