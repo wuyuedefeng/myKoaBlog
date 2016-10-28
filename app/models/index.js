@@ -9,6 +9,7 @@ exports.User    = User;
 exports.Post    = Post;
 exports.Subject = Subject;
 
+mongoose.Promise = global.Promise;
 mongoose.connect(config.db, function(err){
     if (err) {
         console.log(err.message);

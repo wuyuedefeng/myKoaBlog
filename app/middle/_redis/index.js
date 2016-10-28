@@ -1,5 +1,7 @@
 var rdb = require('./redis');
-var config = {};
+var config = {
+
+};
 
 var getUserByUid = function (uid, cb){
     "use strict";
@@ -73,8 +75,13 @@ function update(user, cb){
     var uname = user.uname;
     rdb.set('session:uid:' + user.uname, uid, function(err){
         if (err) return cb(err);
-        delete user.uid;
-        delete user.uname;
+        // delete user.uid;
+        // delete user.uname;
+        for(var key in user){
+            if (config.redisSaveUserKeys.indexOf(key) == -1){
+                delete user[key];
+            }
+        }
         rdb.hmset('session:user:' + uid, user, function(err){
             user.uid = uid;
             user.uname = uname;
@@ -84,10 +91,11 @@ function update(user, cb){
 }
 
 function configOpt(opt){
-    opt = opt || {unameShadow: 'login'};
+    opt = opt || {};
     "use strict";
     // 默认映射username字段作为uname的值(即可以通过username查询到user通过:getUserByUid)
-    config.unameShadow = opt.unameShadow || 'username'
+    config.unameShadow = opt.unameShadow || 'username';
+    config.redisSaveUserKeys = opt.redisSaveUserKeys || ['username'];
 }
 configOpt();
 exports.config = configOpt;

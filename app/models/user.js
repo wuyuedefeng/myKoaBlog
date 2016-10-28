@@ -27,6 +27,7 @@ UserSchema.statics.login = function(githubUser, fn){
         user.githubInfo = githubUser;
         user.save(function(err, user){
             githubUser.mongoId = user._id.toString();
+            githubUser.username = githubUser.login;
             //保存到redis
             RedisSession.save(githubUser, function(err){
                 if(err) return fn(err);
