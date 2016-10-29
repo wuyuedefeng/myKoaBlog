@@ -1,0 +1,24 @@
+.search{
+  .con{
+    width: 400px;
+    margin: 0 auto;
+    margin-top: 150px;
+  }
+  img.search-icon{
+    display: block;
+    width: 100%;
+  }
+  input.search-input{
+    display: block;
+    margin: 20px auto;
+    width: 100%;
+    height: 44px;
+    line-height: 44px;
+    font-size: 20px;
+    padding: 0 10px;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    outline: none;
+  }
+}

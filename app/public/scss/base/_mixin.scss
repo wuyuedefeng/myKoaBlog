@@ -1,0 +1,20 @@
+@mixin opacity($opacity:50) {
+  opacity: $opacity / 100;
+  filter: alpha(opacity=$opacity);
+}
+//.opacity{
+//  @include opacity; //参数使用默认值
+//  @include opacity(60); // 0.6透明度
+//}
+
+@mixin max-screen($res){
+  @media only screen and ( max-width: $res )
+  {
+    @content;
+  }
+}
+//@include max-screen(480px) {
+//  body { color: red }
+//}
+
+

@@ -18,6 +18,23 @@ routes.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, 
                 return $ocLazyLoad.load('js/controllers/testCtrl.js');
             }]
         }
+    }).state('search', {
+        url:'/search',
+        views:{
+            // "header":{
+            //     templateUrl:"views/header.html",
+            //     controller:"headerCtrl"
+            // },
+            "":{
+                templateUrl:"views/search.html",
+                controller:"searchCtrl"
+            }
+        },
+        resolve:{
+            deps: ['$ocLazyLoad', function($ocLazyLoad) {
+                return $ocLazyLoad.load('js/controllers/searchCtrl.js');
+            }]
+        }
     });
-     $urlRouterProvider.otherwise('/test');
+     $urlRouterProvider.otherwise('/search');
 }]);
