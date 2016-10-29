@@ -91,7 +91,6 @@ function get_userInfo(accessToken, cb){
 router.get('/authCallback', function *(next){
     // 通过authCallback 返回的code, 去获取access_token
     var self = this;
-    console.log(self.query);
     yield new Promise((resolve, reject) =>{
         get_access_token(self.query.code, function(err, access_token){
             if(err) reject(err);
@@ -105,7 +104,7 @@ router.get('/authCallback', function *(next){
             });
         })
     }).then(function (user) {
-        self.cookies.set("uid", user.redis_id, {signed: true});
+        self.cookies.set("uid", user.uid, {signed: true});
         self.redirect('/');
     });
 });

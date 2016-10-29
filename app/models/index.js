@@ -1,4 +1,5 @@
 var config = require('../config');
+var winston = require('../middle/_winston');
 // 启动mongo
 var mongoose = require('mongoose');
 
@@ -12,7 +13,8 @@ exports.Subject = Subject;
 mongoose.Promise = global.Promise;
 mongoose.connect(config.db, function(err){
     if (err) {
-        console.log(err.message);
+        // console.log(err.message);
+        winston.logger.error(err.message);
         process.exit(1);
     }else {
         console.info('link MongoDB success!!!');

@@ -8,8 +8,8 @@ rdb.select(6);
 
 //错误监听
 rdb.on("error", function (err) {
-    throw(err);
     winston.logger.error("Error: " + err);
+    throw(err);
 });
 
 module.exports = rdb;

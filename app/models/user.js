@@ -18,7 +18,7 @@ UserSchema.statics.findByUsername = function(username,cb){
     this.findOne({username: username}, cb);
 };
 UserSchema.statics.login = function(githubUser, fn){
-    if (!githubUser) fn(new Error('没有获取到用户信息'));
+    if (!githubUser || !githubUser.login) fn(new Error('没有获取到用户信息'));
     this.findOne({username: githubUser.login}, function(err, user){
         if(err) return fn(err);
         if (!user){
