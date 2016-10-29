@@ -7,6 +7,13 @@
 //  @include opacity(60); // 0.6透明度
 //}
 
+@mixin border-box($box-sizing:border-box){
+  -webkit-box-sizing: $box-sizing;
+  -moz-box-sizing: $box-sizing;
+  box-sizing: $box-sizing;
+}
+
+
 @mixin max-screen($res){
   @media only screen and ( max-width: $res )
   {

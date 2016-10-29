@@ -1,6 +1,6 @@
 <div class="search">
-    <div class="con">
+    <form class="con" ng-submit="search()">
         <img src="../img/search_logo.png" alt="search-logo" class="search-icon">
-        <input type="text" class="search-input" placeholder="请输入搜索内容">
-    </div>
+        <input type="text" ng-model="search.keywords" class="search-input" placeholder="请输入搜索内容">
+    </form>
 </div>
