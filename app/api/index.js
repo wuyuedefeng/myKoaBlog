@@ -8,4 +8,5 @@ module.exports = JoinedApi;
 
 /**
  * 10000  正确
+ * 10011  未登录
  */

@@ -77,6 +77,7 @@ function update(user, cb){
         if (err) return cb(err);
         // delete user.uid;
         // delete user.uname;
+        console.log(user);
         for(var key in user){
             if (config.redisSaveUserKeys.indexOf(key) == -1){
                 delete user[key];
@@ -95,7 +96,7 @@ function configOpt(opt){
     "use strict";
     // 默认映射username字段作为uname的值(即可以通过username查询到user通过:getUserByUid)
     config.unameShadow = opt.unameShadow || 'username';
-    config.redisSaveUserKeys = opt.redisSaveUserKeys || ['username'];
+    config.redisSaveUserKeys = opt.redisSaveUserKeys || ['username', 'name'];
 }
 configOpt();
 exports.config = configOpt;

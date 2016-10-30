@@ -3,7 +3,13 @@
 
 
 
-
+.link{
+  display: inline-block;
+  cursor: pointer;
+  &:hover{
+    color: #454;
+  }
+}
 
 .footer{
   text-align: center;

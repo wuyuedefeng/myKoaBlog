@@ -21,8 +21,15 @@ angular.module('myApp', [[
             }else {
                 $scope._state.go('search');
             }
+        };
 
+        $scope.login = function () {
+            if($scope.user.name || $scope.user.username) return;
+            $scope._http.get({
+                url: '/api/v1/user/githubClientId',
+                alwaysDo: function (isErr, data) {
+                    location.href = 'https://github.com/login/oauth/authorize?scope=user:email&client_id=' + data.oauthClientId;
+                }
+            });
         }
-
-
     }]);

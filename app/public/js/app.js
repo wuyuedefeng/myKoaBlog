@@ -21,6 +21,18 @@ var app = angular.module('myApp', ['routes', 'services', 'angular-loading-bar', 
 app.run(['$rootScope', '$state', 'httpBase', function ($rootScope, $state ,httpBase) {
     $rootScope._http = httpBase;
     $rootScope._state = $state;
+
+    $rootScope.user = {};
+    httpBase.get({
+        url: '/api/v1/user/info',
+        alwaysDo: function (isErr, data) {
+            if (!isErr){
+                $rootScope.user = data.user;
+            }
+            console.log(isErr, data);
+        }
+    })
+
 }]);
 
 app.controller('headerCtrl', ['$scope', function ($scope) {

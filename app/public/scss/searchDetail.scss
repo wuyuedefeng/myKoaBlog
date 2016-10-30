@@ -3,7 +3,7 @@
     height: 55px;
     box-shadow: 0 0 5px #888;
     position: fixed;
-    min-width: 1000px;
+    min-width: 800px;
     width: 100%;
     background: #fff;
 
@@ -48,6 +48,13 @@
           color: #eee;
         }
       }
+    }
+    .login{
+      height: 55px;
+      line-height: 55px;
+      font-size: 14px;
+      vertical-align: top;
+      padding: 0 20px;
     }
   }
 }

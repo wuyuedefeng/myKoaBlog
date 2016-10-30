@@ -1,5 +1,13 @@
+var githubConfig = require('../../middle/_github/config');
 var router = require('koa-router')({
     prefix: '/api/v1/user'
+});
+
+router.get('/githubClientId', function *() {
+    this.body = {
+        code: 10000,
+        oauthClientId: githubConfig["oauth_client_id"]
+    }
 });
 
 // router.post('/login', function *(){
@@ -52,9 +60,10 @@ router.get('/info', function *(){
     "use strict";
     var user = this.currentUser;
     if (user){
-        this.body = {success: true, user: user};
+        delete  user.uid;
+        this.body = {code: 10000, user: user};
     }else {
-        this.body = {success: false, msg: '未登陆'};
+        this.body = {code: 10011, msg: '未登陆'};
     }
 });
 
