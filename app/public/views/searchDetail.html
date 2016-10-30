@@ -1,3 +1,9 @@
-<form ng-submit="search()">
-    <input type="text" ng-model="searchDetail.keywords">
-</form>
+<div class="search-detail">
+    <div class="head">
+        <img src="../img/logo.png" alt="logo" class="logo">
+        <form ng-submit="search()" class="search-form clearfix">
+            <input type="text" ng-model="searchDetail.keywords" class="search-input fl">
+            <input type="submit" value="搜索" class="search-submit fl">
+        </form>
+    </div>
+</div>

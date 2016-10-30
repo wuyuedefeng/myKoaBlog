@@ -10,3 +10,26 @@ html{
 a{
   text-decoration: none;
 }
+input{
+  &:focus{
+    outline: 1px solid #4791ff;
+  }
+}
+
+.fl{
+  float: left;
+}
+.fr{
+  float: right;
+}
+.clearfix {
+  *zoom: 1;
+  &:before, &:after{
+    display: table;
+    line-height: 0;
+    content: "";
+  }
+  &:after{
+    clear: both;
+  }
+}

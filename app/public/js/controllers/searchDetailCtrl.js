@@ -16,7 +16,12 @@ angular.module('myApp', [[
         });
 
         $scope.search = function () {
-            $scope._state.go('searchDetail', {keywords: $scope.searchDetail.keywords});
+            if($scope.searchDetail.keywords){
+                $scope._state.go('searchDetail', {keywords: $scope.searchDetail.keywords});
+            }else {
+                $scope._state.go('search');
+            }
+
         }
 
 
