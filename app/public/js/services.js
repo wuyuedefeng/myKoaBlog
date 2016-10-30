@@ -5,7 +5,7 @@ services.factory("handleHttpError", function(){
     return {
         deal_app_error: function(params) {
             if (!params.result || params.result.code!=10000) {
-                console.log(params.result || params.params.result.msg);
+                console.log(params.result || params.result.msg);
                 params && params["paramsObj"] && (params["error_code"] = "app_error") && params["paramsObj"]["errorDo"] && params["paramsObj"]["errorDo"](params);
                 return false;
             }
@@ -22,18 +22,8 @@ services.factory("handleHttpError", function(){
 // paramsObj {url: '/', params:{a:1, b:1}, successDo:function(handleResult), errorDo:(handleResult), alwaysDo:(isError, handleResult)}
 services.factory('httpBase', ['$http', 'handleHttpError', function($http, handleHttpError){
     return{
-        // host: 'http://teacher.xcase.com.cn',
-        host: function () {
-            var hostTmp = document.domain || window.location.host;
-            if (!hostTmp.match('teacher.xcase.com.cn')){
-                hostTmp = 'http://teacher.xcase.com.cn';
-            }else {
-                hostTmp = '';
-            }
-            return hostTmp;
-        },
         request: function(paramsObj){
-            var requestObj = {method: paramsObj.method, url: this.host() + paramsObj.url};
+            var requestObj = {method: paramsObj.method, url: paramsObj.url};
             if (paramsObj.method == "GET"){
                 requestObj.params = paramsObj.params;
             }else {
@@ -62,7 +52,6 @@ services.factory('httpBase', ['$http', 'handleHttpError', function($http, handle
 
         post: function(paramsObj){
             paramsObj.method = "POST";
-            paramsObj.headers = {'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8'};
             paramsObj.transformRequest = function(data) {
                 return $.param(data);
             };

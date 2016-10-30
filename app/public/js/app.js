@@ -18,8 +18,9 @@ var app = angular.module('myApp', ['routes', 'services', 'angular-loading-bar', 
         cfpLoadingBarProvider.includeSpinner = false;
 
     }]);
-app.run(['$rootScope', 'httpBase', function ($rootScope, httpBase) {
-
+app.run(['$rootScope', '$state', 'httpBase', function ($rootScope, $state ,httpBase) {
+    $rootScope._http = httpBase;
+    $rootScope._state = $state;
 }]);
 
 app.controller('headerCtrl', ['$scope', function ($scope) {

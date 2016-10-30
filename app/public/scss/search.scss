@@ -1,12 +1,12 @@
 .search{
   .con{
     width: 400px;
-    margin: 0 auto;
-    margin-top: 150px;
+    margin: 150px auto 200px;
   }
   img.search-icon{
     display: block;
-    width: 100%;
+    margin: 0 auto;
+    width: 70%;
   }
   input.search-input{
     display: block;
@@ -14,11 +14,12 @@
     width: 100%;
     height: 44px;
     line-height: 44px;
-    font-size: 20px;
-    padding: 0 10px;
+    font-size: 18px;
+    padding: 0 20px;
     border-top: none;
     border-left: none;
     border-right: none;
     outline: none;
+    text-align: center;
   }
 }

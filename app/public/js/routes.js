@@ -21,10 +21,6 @@ routes.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, 
     }).state('search', {
         url:'/search',
         views:{
-            // "header":{
-            //     templateUrl:"views/header.html",
-            //     controller:"headerCtrl"
-            // },
             "":{
                 templateUrl:"views/search.html",
                 controller:"searchCtrl"
@@ -33,6 +29,20 @@ routes.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, 
         resolve:{
             deps: ['$ocLazyLoad', function($ocLazyLoad) {
                 return $ocLazyLoad.load('js/controllers/searchCtrl.js');
+            }]
+        }
+    }).state('searchDetail', {
+        url:'/searchDetail?:keywords',
+        // params: {keywords: null},
+        views:{
+            "":{
+                templateUrl:"views/searchDetail.html",
+                controller:"searchDetailCtrl"
+            }
+        },
+        resolve:{
+            deps: ['$ocLazyLoad', function($ocLazyLoad) {
+                return $ocLazyLoad.load('js/controllers/searchDetailCtrl.js');
             }]
         }
     });

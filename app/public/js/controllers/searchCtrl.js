@@ -6,6 +6,8 @@ angular.module('myApp', [[
 
     $scope.search = function () {
         var keywords = $scope.search.keywords;
-        console.log(keywords);
+        if (keywords){
+            $scope._state.go('searchDetail', {keywords: keywords});
+        }
     }
 }]);
