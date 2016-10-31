@@ -24,7 +24,17 @@ angular.module('myApp', [[
         };
 
         $scope.login = function () {
-            if($scope.user.name || $scope.user.username) return;
+            if($scope.user.name || $scope.user.username) {
+                $scope._http.post({
+                    url: 'api/v1/user/logout',
+                    alwaysDo: function (isErr, data) {
+                        if(!isErr){
+                            location.reload();
+                        }
+                    }
+                });
+                return;
+            }
             $scope._http.get({
                 url: '/api/v1/user/githubClientId',
                 alwaysDo: function (isErr, data) {

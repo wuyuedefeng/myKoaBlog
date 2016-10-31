@@ -18,9 +18,14 @@ var app = angular.module('myApp', ['routes', 'services', 'angular-loading-bar', 
         cfpLoadingBarProvider.includeSpinner = false;
 
     }]);
-app.run(['$rootScope', '$state', 'httpBase', function ($rootScope, $state ,httpBase) {
+app.run(['$rootScope', '$state', 'httpBase', '$timeout', function ($rootScope, $state ,httpBase, $timeout) {
     $rootScope._http = httpBase;
     $rootScope._state = $state;
+
+
+    $timeout(function () {
+        $rootScope.footer = {isShow: true};
+    }, 300);
 
     $rootScope.user = {};
     httpBase.get({

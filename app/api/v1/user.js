@@ -52,7 +52,7 @@ router.get('/githubClientId', function *() {
 router.post('/logout', function *(){
     "use strict";
     this.cookies.set("uid", null, {signed: true});
-    this.body = {success: true};
+    this.body = {code: 10000};
 });
 
 // 个人信息

@@ -12,7 +12,11 @@
 }
 
 .footer{
+  visibility: hidden;
   text-align: center;
   font-size: 12px;
   color: gray;
+}
+.show-footer{
+  visibility: visible;
 }

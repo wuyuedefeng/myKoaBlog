@@ -9,6 +9,7 @@
     <link rel="icon" href="img/favicon.ico">
     <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="js/lib/loading-bar/loading-bar.min.css">
+    <link rel="stylesheet" href="css/lib/font-awesome/css/font-awesome.min.css">
 </head>
 <body>
 <!--<a href="https://github.com/login/oauth/authorize?scope=user:email&client_id=9892ac0590408f2767dc">hello world</a>-->
@@ -19,7 +20,7 @@
     <div ui-view></div>
 </div>
 
-<footer class="footer">
+<footer class="footer" ng-class="{'show-footer': footer.isShow}">
     <div class="container">
         <div class="info">
             <br>
