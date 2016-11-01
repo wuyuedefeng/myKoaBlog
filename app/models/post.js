@@ -31,11 +31,20 @@ PostSchema.index({title: -1, category: -1, tags: -1});
 
 // ------------  new V1 api --------------
 
-PostSchema.statics.keywordsSearchPosts = function (keywords) {
-    var searchObj = {
-        title: {$regex: keywords, $options:'i'},
-        tags: {$in: [keywords]}
-    };
+PostSchema.statics.keywordsSearchPosts = function (keywords, cb) {
+    var subArr = [];
+    keywords.split(' ').forEach(function (sub) {
+        if (sub){
+            subArr.push('(' + sub +')')
+        }
+    });
+    var searchObj = {$or:[
+        {title: {$regex: subArr.join('|'), $options:'i'}},
+        {tags: {$in: keywords.split(' ')}}
+    ]};
+    this.find(searchObj, {}, {sort:{ createdAt: -1}}).populate('author').exec(function(err, posts){
+        callback(err, posts);
+    });
 };
 
 // 新增帖子

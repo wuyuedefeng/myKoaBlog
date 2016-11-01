@@ -9,11 +9,22 @@ router.get('/', function *() {
     var self = this;
     var keywords = self.query.keywords;
 
-    self.body = {
-        code: 10000,
-        posts: [1,2,3]
-    }
-
+    yield new Promise((resolve, reject) => {
+       _models.Post.keywordsSearchPosts(keywords, function (err, posts) {
+           if (err) reject(err);
+           resolve(posts);
+       })
+    }).then(function (posts) {
+        self.body = {
+            code: 10000,
+            posts: posts
+        }
+    }, function (err) {
+        self.body = {
+            code: 10050,
+            msg: '获取失败'
+        }
+    });
 });
 
 
