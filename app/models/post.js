@@ -31,7 +31,7 @@ PostSchema.index({title: -1, category: -1, tags: -1});
 
 // ------------  new V1 api --------------
 
-PostSchema.statics.keywordsSearchPosts = function (keywords, cb) {
+PostSchema.statics.keywordsSearchPosts = function (keywords, callback) {
     var subArr = [];
     keywords.split(' ').forEach(function (sub) {
         if (sub){
