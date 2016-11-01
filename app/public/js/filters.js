@@ -19,8 +19,12 @@ filters.filter('markdownLimitLength', function (){
 filters.filter('keywords', function (){
         return function (oriVal, keywords) {
             if (keywords){
-                return oriVal.replace(keywords, function (keywords) {
-                   return '<span class="red">' + keywords + '</span>';
+                var subArr = [];
+                keywords.split(' ').forEach(function (value) {
+                    subArr.push('('+value+')');
+                });
+                return oriVal.replace(subArr.join('|'), function (key) {
+                   return '<span class="red">' + key + '</span>';
                 })
             }
             return '';
