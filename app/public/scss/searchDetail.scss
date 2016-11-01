@@ -86,7 +86,17 @@
                 color: #9B9B9B;
 
                 .fa,.tag{
-                  color: rebeccapurple
+                  color: gray;
+                }
+
+                .subject{
+                  display: inline-block;
+                  margin: 0 5px;
+                  color: #2299dd;
+
+                  .fa{
+                    color: #2299dd
+                  }
                 }
               }
               .article{
