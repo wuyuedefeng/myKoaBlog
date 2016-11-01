@@ -12,6 +12,9 @@ angular.module('myApp', [[
             },
             alwaysDo: function (isErr, data) {
                 console.log(isErr, data);
+                if(!isErr){
+                    $scope.posts = data.posts;
+                }
             }
         });
 
