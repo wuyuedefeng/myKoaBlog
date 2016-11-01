@@ -23,6 +23,7 @@ filters.filter('keywords', function (){
                 keywords.split(' ').forEach(function (value) {
                     subArr.push('('+value+')');
                 });
+                console.log(subArr);
                 return oriVal.replace(subArr.join('|'), function (key) {
                     console.log(key);
                    return '<span class="red">' + key + '</span>';
