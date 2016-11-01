@@ -24,6 +24,7 @@ filters.filter('keywords', function (){
                     subArr.push('('+value+')');
                 });
                 return oriVal.replace(subArr.join('|'), function (key) {
+                    console.log(key);
                    return '<span class="red">' + key + '</span>';
                 })
             }
