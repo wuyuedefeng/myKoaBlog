@@ -47,4 +47,4 @@ require('./routes')(app);
 //     this.body = 'abc';
 // });
 
-app.listen(3000);
+app.listen(config.port);
