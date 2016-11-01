@@ -28,12 +28,33 @@ PostSchema.index({category: -1, tags: -1});
 PostSchema.index({title: -1, category: -1, tags: -1});
 
 
+
+// ------------  new V1 api --------------
+
+PostSchema.statics.keywordsSearchPosts = function (keywords) {
+    var searchObj = {
+        title: {$regex: keywords, $options:'i'},
+        tags: {$in: [keywords]}
+    };
+};
+
+// 新增帖子
 PostSchema.statics.insertPost = function(post, cb){
     var postEntity = new PostModel({author: post.userId, title: post.title, category: post.category, tags: post["tags[]"], markdown: post.markdown});
     postEntity.save(function(err, data){
         return cb(err, data);
     });
 };
+
+
+
+
+
+
+
+// old ----------
+
+
 
 PostSchema.statics.findPosts = function(pageNumber, limit, searchText, cb){
     pageNumber = pageNumber || 1;
@@ -68,9 +89,6 @@ PostSchema.statics.searchPosts = function(title, category, tags, page, cb){
         if (err) return cb(err);
         cb(err, obj);
     });
-
-
-
 };
 
 PostSchema.statics.findById = function(_id, cb){
