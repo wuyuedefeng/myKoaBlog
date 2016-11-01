@@ -82,6 +82,11 @@
               .title{
                 margin-bottom: 15px;
                 text-decoration: underline;
+                color: #071AC8;
+                &:visited{
+                  color: #542189;
+                }
+
               }
               .sub-title{
                 margin-top: 5px;
