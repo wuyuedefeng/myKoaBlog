@@ -8,7 +8,7 @@
     // First application
     {
       name      : "myKoaBlog",
-      script    : "app.js",
+      script    : "app/app.js",
       env: {
         COMMON_VARIABLE: "true"
       },
