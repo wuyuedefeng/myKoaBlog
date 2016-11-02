@@ -17,7 +17,7 @@ angular.module('myApp', [[
             alwaysDo: function (isErr, data) {
                 console.log(isErr, data);
                 if (!isErr){
-                    $('#markdown').html(marked(markdown));
+                    $('#markdown').html(marked(data.post.markdown));
                 }
             }
         });
