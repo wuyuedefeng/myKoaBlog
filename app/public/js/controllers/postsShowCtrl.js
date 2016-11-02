@@ -4,11 +4,11 @@ angular.module('myApp', [[
     '../js/lib/highlight/src/styles/darkula.css',
     '../js/lib/highlight/highlight.pack.js'
 ]])
-    .controller('postsShowCtrl',['$scope', '$stateParams', '$timeout', function($scope, $stateParams, $timeout) {
+    .controller('postsShowCtrl',['$scope', '$stateParams', function($scope, $stateParams) {
         $scope.post = {};
-        // $scope.$watch('$viewContentLoaded', function() {
-        //
-        // });
+        $scope.$watch('$viewContentLoaded', function() {
+            hljs.initHighlightingOnLoad();
+        });
 
 
         $scope._http.get({
@@ -20,9 +20,6 @@ angular.module('myApp', [[
                 console.log(isErr, data);
                 if (!isErr){
                     $('#markdown').html(marked(data.post.markdown));
-                    $timeout(function () {
-                        hljs.initHighlightingOnLoad();
-                    }, 100);
                 }
             }
         });
