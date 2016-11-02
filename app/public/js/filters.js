@@ -16,15 +16,6 @@ filters.filter('markdownLimitLength', function (){
     }
 });
 
-filters.filter('markdownToHtml', function () {
-    return function (markdown) {
-        if (marked){
-            return marked(markdown)
-        }
-        return markdown;
-    }
-});
-
 filters.filter('keywords', function (){
         return function (oriVal, keywords) {
             if (keywords){

@@ -15,5 +15,10 @@ angular.module('myApp', [[
 
                 }
             }
-        })
+        });
+
+        $scope.getMarkdownHtml = function (markdown) {
+            if (!markdown) return '';
+            return marked(markdown);
+        }
     }]);
