@@ -2,7 +2,7 @@ angular.module('myApp', [[
     '../css/postsShow.css',
     '../js/lib/marked/marked.min.js',
     '../js/lib/angular-marked/angular-marked.min.js',
-    '../js/lib/highlight/src/styles/railscasts.css',
+    '../js/lib/highlight/src/styles/tomorrow-night-eighties.css',
     '../js/lib/highlight/highlight.pack.js'
 ], 'hc.marked'])
     .config(['markedProvider', function (markedProvider) {
@@ -10,7 +10,6 @@ angular.module('myApp', [[
             gfm: true,
             tables: true,
             highlight: function (code, lang) {
-                console.log('highlight', code, lang);
                 if (lang) {
                     return hljs.highlight(lang, code, true).value;
                 } else {
@@ -22,11 +21,6 @@ angular.module('myApp', [[
     .controller('postsShowCtrl',['$scope', '$stateParams', function($scope, $stateParams) {
         $scope.post = {};
         // $scope.$watch('$viewContentLoaded', function() {
-        //     console.log('rendered');
-        //     setTimeout(function () {
-        //         hljs.initHighlightingOnLoad();
-        //     }, 1000);
-        //
         // });
 
 
@@ -39,8 +33,6 @@ angular.module('myApp', [[
                 console.log(isErr, data);
                 if (!isErr){
                     $scope.post = data.post;
-                    console.log('markdown');
-                    $('#markdown').html(marked(data.post.markdown));
                 }
             }
         });
