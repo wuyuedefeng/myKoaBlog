@@ -55,8 +55,12 @@ PostSchema.statics.insertPost = function(post, cb){
     });
 };
 
-
-
+// 根据id 查询某个帖子
+PostSchema.statics.findById = function(_id, cb){
+    this.findOne({_id: _id}).populate('author').exec(function(err, post){
+        cb(err, post);
+    });
+};
 
 
 
@@ -100,11 +104,7 @@ PostSchema.statics.insertPost = function(post, cb){
 //     });
 // };
 //
-// PostSchema.statics.findById = function(_id, cb){
-//     this.findOne({_id: _id}).populate('author').exec(function(err, post){
-//         cb(err, post);
-//     });
-// };
+
 
 
 //  model 方法

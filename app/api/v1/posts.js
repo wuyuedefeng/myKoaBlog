@@ -27,6 +27,30 @@ router.get('/', function *() {
     });
 });
 
+router.get('show', function *() {
+    var self = this;
+    var query = this.query;
+    yield new Promise((resolve, reject) => {
+       _models.Post.findById(query._id, function (err, post) {
+           if (err){
+               reject(err);
+           }else {
+               resolve(post);
+           }
+       })
+    }).then(function (post) {
+        self.body = {
+            code: 10000,
+            post: post
+        }
+    }, function (err) {
+        self.body = {
+            code: 10050,
+            msg: '获取失败'
+        }
+    });
+});
+
 
 // 发布帖子
 router.post('/new', function *(next) {

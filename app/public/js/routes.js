@@ -59,6 +59,20 @@ routes.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, 
                 return $ocLazyLoad.load('js/controllers/postsNewCtrl.js');
             }]
         }
+    }).state('postsShow', {
+        url:'/posts/show?:id',
+        // params: {keywords: null},
+        views:{
+            "":{
+                templateUrl:"views/posts/show.html",
+                controller:"postsShowCtrl"
+            }
+        },
+        resolve:{
+            deps: ['$ocLazyLoad', function($ocLazyLoad) {
+                return $ocLazyLoad.load('js/controllers/postsShowCtrl.js');
+            }]
+        }
     });
      $urlRouterProvider.otherwise('/search');
 }]);
