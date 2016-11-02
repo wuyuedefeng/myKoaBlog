@@ -34,6 +34,7 @@ angular.module('myApp', [[
                 if (!isErr){
                     $scope.post = data.post;
                     $scope.post.html =  marked(data.post.markdown);
+                    hljs.initHighlightingOnLoad();
                 }
             }
         });
