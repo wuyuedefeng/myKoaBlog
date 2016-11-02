@@ -21,9 +21,13 @@ angular.module('myApp', [[
     }])
     .controller('postsShowCtrl',['$scope', '$stateParams', function($scope, $stateParams) {
         $scope.post = {};
-        // $scope.$watch('$viewContentLoaded', function() {
-        //     hljs.initHighlightingOnLoad();
-        // });
+        $scope.$watch('$viewContentLoaded', function() {
+            console.log('rendered');
+            setTimeout(function () {
+                hljs.initHighlightingOnLoad();
+            }, 1000);
+
+        });
 
 
         $scope._http.get({
