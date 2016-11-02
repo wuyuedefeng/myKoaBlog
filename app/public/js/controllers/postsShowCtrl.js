@@ -18,7 +18,7 @@ angular.module('myApp', [[
             }
         });
     }])
-    .controller('postsShowCtrl',['$scope', '$stateParams', function($scope, $stateParams) {
+    .controller('postsShowCtrl',['$scope', '$stateParams', 'marked', function($scope, $stateParams, marked) {
         $scope.post = {};
         // $scope.$watch('$viewContentLoaded', function() {
         // });
@@ -33,6 +33,7 @@ angular.module('myApp', [[
                 console.log(isErr, data);
                 if (!isErr){
                     $scope.post = data.post;
+                    $scope.post.html =  marked(data.post.markdown);
                 }
             }
         });
