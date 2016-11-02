@@ -1,5 +1,6 @@
 angular.module('myApp', [[
-    '../css/postsShow.css'
+    '../css/postsShow.css',
+    '../js/lib/marked/marked.min.js'
 ]])
     .controller('postsShowCtrl',['$scope', '$stateParams', function($scope, $stateParams) {
         $scope.post = {};
