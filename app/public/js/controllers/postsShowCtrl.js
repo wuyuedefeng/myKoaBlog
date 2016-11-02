@@ -4,6 +4,11 @@ angular.module('myApp', [[
 ]])
     .controller('postsShowCtrl',['$scope', '$stateParams', function($scope, $stateParams) {
         $scope.post = {};
+        // $scope.$watch('$viewContentLoaded', function() {
+        //
+        // });
+
+
         $scope._http.get({
             url: '/api/v1/posts/show',
             params: {
@@ -12,13 +17,8 @@ angular.module('myApp', [[
             alwaysDo: function (isErr, data) {
                 console.log(isErr, data);
                 if (!isErr){
-
+                    $('#markdown').html(marked(markdown));
                 }
             }
         });
-
-        $scope.getMarkdownHtml = function (markdown) {
-            if (!markdown) return '';
-            return marked(markdown);
-        }
     }]);
