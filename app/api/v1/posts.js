@@ -27,7 +27,7 @@ router.get('/', function *() {
     });
 });
 
-router.get('show', function *() {
+router.get('/show', function *() {
     var self = this;
     var query = this.query;
     yield new Promise((resolve, reject) => {
