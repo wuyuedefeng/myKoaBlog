@@ -10,6 +10,7 @@ angular.module('myApp', [[
             // gfm: true,
             // tables: true,
             highlight: function (code, lang) {
+                console.log(code, lang);
                 if (lang) {
                     return hljs.highlight(lang, code, true).value;
                 } else {
