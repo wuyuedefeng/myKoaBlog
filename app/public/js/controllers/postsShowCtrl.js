@@ -2,7 +2,7 @@ angular.module('myApp', [[
     '../css/postsShow.css',
     '../js/lib/marked/marked.min.js',
     '../js/lib/angular-marked/angular-marked.min.js',
-    '../js/lib/highlight/src/styles/darkula.css',
+    '../js/lib/highlight/src/styles/railscasts.css',
     '../js/lib/highlight/highlight.pack.js'
 ], 'hc.marked'])
     .config(['markedProvider', function (markedProvider) {
