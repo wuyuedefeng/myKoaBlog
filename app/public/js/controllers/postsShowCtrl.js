@@ -3,7 +3,7 @@ angular.module('myApp', [[
     '../js/lib/marked/marked.min.js',
     '../js/lib/angular-marked/angular-marked.min.js',
     '../js/lib/highlight/src/styles/darkula.css',
-    '../js/lib/highlight/src/highlight.js'
+    '../js/lib/highlight/highlight.pack.js'
 ], 'hc.marked'])
     .config(['markedProvider', function (markedProvider) {
         markedProvider.setOptions({
@@ -21,13 +21,13 @@ angular.module('myApp', [[
     }])
     .controller('postsShowCtrl',['$scope', '$stateParams', function($scope, $stateParams) {
         $scope.post = {};
-        $scope.$watch('$viewContentLoaded', function() {
-            console.log('rendered');
-            setTimeout(function () {
-                hljs.initHighlightingOnLoad();
-            }, 1000);
-
-        });
+        // $scope.$watch('$viewContentLoaded', function() {
+        //     console.log('rendered');
+        //     setTimeout(function () {
+        //         hljs.initHighlightingOnLoad();
+        //     }, 1000);
+        //
+        // });
 
 
         $scope._http.get({
