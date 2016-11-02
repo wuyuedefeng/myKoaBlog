@@ -1,6 +1,8 @@
 angular.module('myApp', [[
     '../css/postsShow.css',
-    '../js/lib/marked/marked.min.js'
+    '../js/lib/marked/marked.min.js',
+    '../js/lib/highlight/src/styles/darkula.css',
+    '../js/lib/highlight/highlight.pack.js'
 ]])
     .controller('postsShowCtrl',['$scope', '$stateParams', function($scope, $stateParams) {
         $scope.post = {};
@@ -18,6 +20,7 @@ angular.module('myApp', [[
                 console.log(isErr, data);
                 if (!isErr){
                     $('#markdown').html(marked(data.post.markdown));
+                    hljs.initHighlightingOnLoad();
                 }
             }
         });
