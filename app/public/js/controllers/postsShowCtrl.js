@@ -10,7 +10,7 @@ angular.module('myApp', [[
             gfm: true,
             tables: true,
             highlight: function (code, lang) {
-                console.log(highlight, code, lang);
+                console.log('highlight', code, lang);
                 if (lang) {
                     return hljs.highlight(lang, code, true).value;
                 } else {
@@ -35,6 +35,7 @@ angular.module('myApp', [[
                 console.log(isErr, data);
                 if (!isErr){
                     $scope.post = data.post;
+                    console.log('markdown');
                     $('#markdown').html(marked(data.post.markdown));
                 }
             }
