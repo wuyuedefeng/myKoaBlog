@@ -21,7 +21,7 @@ angular.module('myApp', [[
                     $scope.post.html =  marked(data.post.markdown);
                     $timeout(function () {
                         hljs.initHighlighting();
-                    },1000);
+                    });
                 }
             }
         });
