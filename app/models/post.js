@@ -43,6 +43,11 @@ PostSchema.statics.keywordsSearchPosts = function (keywords, callback) {
         {tags: {$in: keywords.split(' ')}}
     ]};
     this.find(searchObj, {}, {sort:{ createdAt: -1}}).populate('author').exec(function(err, posts){
+        posts && posts.forEach(function (post) {
+            if (post.markdown){
+                post.markdown = post.markdown.substr(0, 300);
+            }
+        });
         callback(err, posts);
     });
 };

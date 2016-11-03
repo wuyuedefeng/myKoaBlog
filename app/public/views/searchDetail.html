@@ -23,7 +23,7 @@
                             <i class="fa fa-tags" aria-hidden="true"></i>
                             <span class="tag" ng-repeat="tag in post.tags" ng-bind-html="tag|keywords:searchDetail.keywords"></span>
                         </div>
-                        <p class="article" ng-bind-html="post.markdown|markdownLimitLength|keywords:searchDetail.keywords"></p>
+                        <p class="article" ng-bind-html="post.markdown|keywords:searchDetail.keywords"></p>
                     </li>
                 </ul>
             </div>
