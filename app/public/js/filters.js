@@ -27,6 +27,6 @@ filters.filter('keywords', function (){
                    return '<span class="red">' + key + '</span>';
                 })
             }
-            return '';
+            return oriVal;
         }
 });
