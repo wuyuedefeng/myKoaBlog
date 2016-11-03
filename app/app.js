@@ -14,7 +14,9 @@ app.keys = config.session.keys;
 /**
  * 静态文件
  */
-app.use(staticServe(__dirname + '/public'));
+app.use(staticServe(__dirname + '/public'),{
+    maxage: 365 * 24 * 60 * 60
+});
 app.use(staticCache(__dirname + '/public/js/lib'), {
     maxAge: 365 * 24 * 60 * 60
 });
