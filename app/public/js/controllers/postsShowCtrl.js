@@ -19,9 +19,7 @@ angular.module('myApp', [[
                 if (!isErr && data.post){
                     $scope.post = data.post;
                     $scope.post.html =  marked(data.post.markdown);
-                    $timeout(function () {
-                        hljs.initHighlighting();
-                    });
+                    hljs.initHighlighting();
                 }
             }
         });
