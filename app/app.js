@@ -1,8 +1,9 @@
 var config = require('./config');
 var koa = require('koa');
 var bodyParser = require('koa-bodyparser');
+
 var staticServe = require('koa-static');
-var staticCache = require('koa-static-cache');
+// var staticCache = require('koa-static-cache');
 // 加载models 链接mongo
 require('./models');
 
@@ -14,12 +15,13 @@ app.keys = config.session.keys;
 /**
  * 静态文件
  */
-app.use(staticServe(__dirname + '/public'),{
+
+
+app.use(staticServe(__dirname + '/public'));
+app.use(staticServe(__dirname + '/public/js/lib',{
     maxage: 365 * 24 * 60 * 60
-});
-app.use(staticCache(__dirname + '/public/js/lib'), {
-    maxAge: 365 * 24 * 60 * 60
-});
+}));
+
 
 /**
  * logger x-response-time

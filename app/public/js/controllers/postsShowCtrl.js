@@ -1,8 +1,8 @@
 angular.module('myApp', [[
     '../css/postsShow.css',
     '../js/lib/marked/marked.min.js',
-    '../js/lib/highlight/src/styles/tomorrow-night-eighties.css',
-    '../js/lib/highlight/highlight.pack.js'
+    '/highlight/src/styles/tomorrow-night-eighties.css',
+    '/highlight/highlight.pack.js'
 ]])
     .controller('postsShowCtrl',['$scope', '$stateParams', '$timeout', function($scope, $stateParams, $timeout) {
         $scope.post = {};
