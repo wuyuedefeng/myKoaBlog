@@ -16,7 +16,7 @@ angular.module('myApp', [[
             },
             alwaysDo: function (isErr, data) {
                 console.log(isErr, data);
-                if (!isErr){
+                if (!isErr && data.post){
                     $scope.post = data.post;
                     $scope.post.html =  marked(data.post.markdown);
                     $timeout(function () {
