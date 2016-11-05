@@ -16,6 +16,7 @@ angular.module('myApp', [[
                     $scope.posts = data.posts;
 
                     $scope.tagsObj = getPostsTags(data.posts);
+                    console.log('tagsObj', $scope.tagsObj);
 
                 }
             }
