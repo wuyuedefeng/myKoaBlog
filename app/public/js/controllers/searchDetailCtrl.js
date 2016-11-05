@@ -14,9 +14,45 @@ angular.module('myApp', [[
                 console.log(isErr, data);
                 if(!isErr){
                     $scope.posts = data.posts;
+
+                    $scope.tagsObj = getPostsTags(data.posts);
+
                 }
             }
         });
+
+        $scope.isShowPost = function (tags) {
+            var tagsObj = $scope.tagsObj;
+            var keys = [];
+            tagsObj && Object.keys(tagsObj).forEach(function (tag) {
+                console.log(tagsObj[tag]);
+                if (tagsObj[tag]){
+                    keys.push(tag);
+                }
+            });
+            var contain = true;
+            angular.forEach(keys, function (key) {
+                if (tags.indexOf(key) == -1){
+                    contain = false;
+                }
+            });
+            return contain;
+        };
+
+
+        function getPostsTags(posts) {
+            var obj = {};
+            var arr = [];
+            angular.forEach(posts, function (post) {
+                if (post.tags) {
+                    arr.concat(post.tags);
+                }
+            });
+            arr.forEach(function (item) {
+                obj[item] = 1;
+            });
+            return obj.keys;
+        }
 
         $scope.search = function () {
             if($scope.searchDetail.keywords){

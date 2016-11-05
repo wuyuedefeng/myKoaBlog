@@ -16,9 +16,16 @@ var filters = angular.module('filters', []);
 //     }
 // });
 
+filters.filter('ObjKeys', function (){
+    return function (obj) {
+        return Object.keys(obj);
+    }
+});
+
 filters.filter('keywords', function (){
         return function (oriVal, keywords) {
-            if (keywords){
+            console.log(oriVal)
+            if (oriVal && keywords){
                 var subArr = [];
                 keywords.split(' ').forEach(function (value) {
                     subArr.push('('+value+')');
