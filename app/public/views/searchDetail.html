@@ -13,7 +13,7 @@
             <div class="search-details">
                 <ul class="list">
                     <li class="item" ng-repeat="post in posts">
-                        <a ui-sref="postsShow({id: post._id})" class="title" ng-bind-html="post.title|keywords:searchDetail.keywords"></a>
+                        <a ui-sref="postsShow({id: post._id})" target="_blank" class="title" ng-bind-html="post.title|keywords:searchDetail.keywords"></a>
                         <div class="sub-title">
                             <span class="time" ng-bind-html="post.updatedAt|date:'yyyy-MM-dd'|keywords:searchDetail.keywords"></span>
                             <div class="subject">
