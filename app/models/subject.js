@@ -83,7 +83,7 @@ SubjectSchema.statics.initData = function(){
         },{
             key: 'javascript',
             value: 'javascript',
-            tags: ['javascript-ES5', 'javascript-ES6', 'jQuery', 'angular', 'angular2', 'react']
+            tags: ['javascript-ES5', 'javascript-ES6', 'jQuery', 'angular', 'angular2', 'react', 'requireJS']
         }]
     }, {
         group: '数据库',
