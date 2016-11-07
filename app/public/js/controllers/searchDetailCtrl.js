@@ -23,8 +23,9 @@ angular.module('myApp', [[
             }
         });
 
-        $scope.isShowPost = function (tags) {
+        $scope.isShowPost = function () {
             var tagsObj = $scope.tagsObj;
+            var tags = Object.keys(tagsObj);
             var keys = [];
             tagsObj && Object.keys(tagsObj).forEach(function (tag) {
                 if (tagsObj[tag]){
@@ -53,7 +54,7 @@ angular.module('myApp', [[
                 obj[tag] = 0;
             });
 
-            return Object.keys(obj);
+            return obj;
         }
 
         $scope.search = function () {
