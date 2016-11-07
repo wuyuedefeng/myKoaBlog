@@ -64,7 +64,7 @@
 
   .main{
     position: relative;
-    margin-top: 55px;
+    padding-top: 55px;
     min-height: 600px;
     .main-left{
       padding: 5px 0 0 120px ;
@@ -125,7 +125,7 @@
     .main-right{
       margin-left: 820px;
       position: absolute;
-      top: 0;
+      top: 75px;
       right: 20px;
 
       .tags{
