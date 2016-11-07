@@ -49,9 +49,10 @@ angular.module('myApp', [[
                     arr = arr.concat(post.tags);
                 }
             });
-            arr.forEach(function (item) {
-                obj[item] = 0;
+            angular.forEach(arr, function (tag) {
+                obj[tag] = 0;
             });
+
             return Object.keys(obj);
         }
 
