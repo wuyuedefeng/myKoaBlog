@@ -42,6 +42,7 @@ angular.module('myApp', [[
 
 
         function getPostsTags(posts) {
+            console.log('..posts..', posts);
             var obj = {};
             var arr = [];
             angular.forEach(posts, function (post) {
