@@ -16,6 +16,7 @@ angular.module('myApp', [[
                     $scope.posts = data.posts;
 
                     $scope.tagsObj = getPostsTags(data.posts);
+
                     console.log('tagsObj', $scope.tagsObj);
 
                 }
@@ -52,6 +53,7 @@ angular.module('myApp', [[
             arr.forEach(function (item) {
                 obj[item] = 1;
             });
+            console.log('obj.keys',obj.keys);
             return obj.keys;
         }
 
