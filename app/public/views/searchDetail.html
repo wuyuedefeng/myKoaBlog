@@ -28,7 +28,7 @@
                 </ul>
             </div>
         </div>
-        <div class="main-right fr">
+        <div class="main-right">
             <div class="tags" ng-if="tagsObj">
                 <span class="tag" ng-repeat="tag in (tagsObj|ObjKeys)" ng-bind="tag" ng-class="{'tag-sel': tagsObj[tag]}" ng-click="tagsObj[tag] = !tagsObj[tag]"></span>
             </div>

@@ -69,6 +69,7 @@
       padding: 5px 0 0 120px ;
       width: 800px;
       display: inline-block;
+      overflow: hidden;
       .search-count{
         font-size: 12px;
         color: #9B9B9B;
@@ -121,7 +122,7 @@
       }
     }
     .main-right{
-      margin-left: 820px;
+      margin-left: 10px;
       .tags{
         span.tag{
           display: inline-block;
