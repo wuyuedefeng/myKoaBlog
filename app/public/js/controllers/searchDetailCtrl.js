@@ -23,7 +23,8 @@ angular.module('myApp', [[
             }
         });
 
-        $scope.isShowPost = function (tags) {
+        $scope.isShowPost = function (post) {
+            var tags = post.tags;
             var tagsObj = $scope.tagsObj;
             var keys = [];
             tagsObj && Object.keys(tagsObj).forEach(function (tag) {
@@ -32,9 +33,12 @@ angular.module('myApp', [[
                 }
             });
             var contain = true;
+
             angular.forEach(keys, function (key) {
                 if (tags.indexOf(key) == -1){
-                    contain = false;
+                    if (post.title && !post.title.match(key) || post.markdown && !post.markdown.match(key)){
+                        contain = false;
+                    }
                 }
             });
             return contain;
