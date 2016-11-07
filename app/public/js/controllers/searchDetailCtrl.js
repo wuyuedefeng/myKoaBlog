@@ -42,7 +42,6 @@ angular.module('myApp', [[
 
 
         function getPostsTags(posts) {
-            console.log('..posts..', posts);
             var obj = {};
             var arr = [];
             angular.forEach(posts, function (post) {
@@ -53,8 +52,7 @@ angular.module('myApp', [[
             arr.forEach(function (item) {
                 obj[item] = 0;
             });
-            console.log('.....', obj.keys);
-            return obj.keys;
+            return Object.keys(obj);
         }
 
         $scope.search = function () {
