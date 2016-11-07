@@ -63,7 +63,8 @@
   }
 
   .main{
-    padding-top: 55px;
+    position: relative;
+    margin-top: 55px;
     min-height: 600px;
     .main-left{
       padding: 5px 0 0 120px ;
@@ -122,7 +123,11 @@
       }
     }
     .main-right{
-      margin-left: 10px;
+      margin-left: 820px;
+      position: absolute;
+      top: 0;
+      right: 20px;
+
       .tags{
         span.tag{
           display: inline-block;
