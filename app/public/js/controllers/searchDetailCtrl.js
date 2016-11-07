@@ -23,9 +23,8 @@ angular.module('myApp', [[
             }
         });
 
-        $scope.isShowPost = function () {
+        $scope.isShowPost = function (tags) {
             var tagsObj = $scope.tagsObj;
-            var tags = Object.keys(tagsObj);
             var keys = [];
             tagsObj && Object.keys(tagsObj).forEach(function (tag) {
                 if (tagsObj[tag]){
