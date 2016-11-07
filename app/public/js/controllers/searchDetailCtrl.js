@@ -27,7 +27,6 @@ angular.module('myApp', [[
             var tagsObj = $scope.tagsObj;
             var keys = [];
             tagsObj && Object.keys(tagsObj).forEach(function (tag) {
-                console.log(tagsObj[tag]);
                 if (tagsObj[tag]){
                     keys.push(tag);
                 }
@@ -51,9 +50,9 @@ angular.module('myApp', [[
                 }
             });
             arr.forEach(function (item) {
-                obj[item] = 1;
+                obj[item] = 0;
             });
-            console.log('obj.keys',obj.keys);
+            console.log('.....', obj.keys);
             return obj.keys;
         }
 
