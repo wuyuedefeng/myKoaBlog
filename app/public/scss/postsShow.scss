@@ -4,8 +4,12 @@
     margin: 0 auto;
     max-width: 730px;
     padding: 0 15px;
-    background: white;
-    box-shadow: 0 0 1px red;
+    background: darkgoldenrod;
+    box-shadow: 0 0 1px #ff79c6;
+
+    .old-link{
+      color: wheat;
+    }
 
     .post-title{
       padding: 10px 0;

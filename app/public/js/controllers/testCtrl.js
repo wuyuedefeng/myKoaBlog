@@ -12,3 +12,4 @@ angular.module('myApp', [[ // you don't even need to set the name of the module 
     // }]).run(function() {
     //     console.warn('run gridModule');
     // });
+

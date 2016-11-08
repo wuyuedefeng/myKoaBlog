@@ -5,6 +5,7 @@ angular.module('myApp', [[
     '/highlight/highlight.pack.js'
 ]])
     .controller('postsShowCtrl',['$scope', '$stateParams', '$timeout', function($scope, $stateParams, $timeout) {
+        $scope._id = $stateParams.id;
         $scope.post = {};
         // $scope.$watch('$viewContentLoaded', function() {
         // });
