@@ -1,9 +1,12 @@
-angular.module('myApp', [[
-    '../css/postsShow.css',
+angular.module('myApp', [{
+    files: [
+        '../css/postsShow.css',
     '../js/lib/marked/marked.min.js',
     '/highlight/src/styles/tomorrow-night-eighties.css',
     '/highlight/highlight.pack.js'
-]])
+    ],
+    cache: true
+}])
     .controller('postsShowCtrl',['$scope', '$stateParams', '$timeout', function($scope, $stateParams, $timeout) {
         $scope._id = $stateParams.id;
         $scope.post = {};
