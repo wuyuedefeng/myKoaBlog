@@ -68,7 +68,15 @@ SubjectSchema.statics.initData = function(){
         categories: [{
             key: 'MAC',
             value: 'mac',
-            tags: ['oc', 'swift', 'xcode']
+            tags: ['oc', 'swift', 'xcode', 'node-webkit']
+        },{
+            key: 'Windows',
+            value: 'windows',
+            tags: ['node-webkit']
+        },{
+            key: 'Node-Webkit',
+            value: 'node-webkit',
+            tags: ['node', 'webkit']
         }]
     }, {
         group: '前端',
