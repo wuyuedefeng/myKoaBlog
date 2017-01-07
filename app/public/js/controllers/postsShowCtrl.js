@@ -1,7 +1,8 @@
 angular.module('myApp', [{
     files: [
         '../css/postsShow.css',
-    '../js/lib/marked/marked.min.js'
+        '../js/lib/marked/marked.min.js',
+        '/highlight/src/styles/tomorrow-night-eighties.css'
     ],
     cache: true
 }])
