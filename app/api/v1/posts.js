@@ -40,8 +40,7 @@ router.get('/show', function *() {
        })
     }).then(function (post) {
         var marked = require('marked');
-        var hl = require("highlight").Highlight;
-        post.markdown = hl(marked(post.markdown));
+        post.markdown = marked(post.markdown);
         self.body = {
             code: 10000,
             post: post
