@@ -1,9 +1,7 @@
 angular.module('myApp', [{
     files: [
         '../css/postsShow.css',
-    '../js/lib/marked/marked.min.js',
-    '/highlight/src/styles/tomorrow-night-eighties.css',
-    '/highlight/highlight.pack.js'
+    '../js/lib/marked/marked.min.js'
     ],
     cache: true
 }])
@@ -22,10 +20,7 @@ angular.module('myApp', [{
                 console.log(isErr, data);
                 if (!isErr && data.post){
                     $scope.post = data.post;
-                    $scope.post.html =  marked(data.post.markdown);
-                    $timeout(function () {
-                        hljs.initHighlighting();
-                    });
+                    $scope.post.html =  data.post.markdown;
                 }
             }
         });

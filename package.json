@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/wuyuedefeng/myKoaBlog#readme",
   "dependencies": {
+    "highlight": "^0.2.4",
     "koa": "^1.2.4",
     "koa-bodyparser": "^2.2.0",
     "koa-router": "^5.4.0",
